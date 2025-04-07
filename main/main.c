@@ -10,16 +10,15 @@
 #include "temp_sensor.h"
 #include "clearblade_connect.h"
 
-
-#define WIFI_SSID               "tu_ssid"       // !!!!!!!!!!! Configurar
-#define WIFI_PASSWORD           "tu_wifi_pass"  // !!!!!!!!!!! Configurar
-#define CLEARBLADE_BROKER_URI   "mqtts://us-central1-mqtt.clearblade.com"
-#define CLEARBLADE_PROJECT_ID   "iot-dev1"
-#define CLEARBLADE_REGION       "us-central1"
-#define CLEARBLADE_REGISTRY     "registry_1"
+#define WIFI_SSID "tu_ssid"          // !!!!!!!!!!! Configurar
+#define WIFI_PASSWORD "tu_wifi_pass" // !!!!!!!!!!! Configurar
+#define CLEARBLADE_BROKER_URI "mqtts://us-central1-mqtt.clearblade.com"
+#define CLEARBLADE_PROJECT_ID "iot-dev1"
+#define CLEARBLADE_REGION "us-central1"
+#define CLEARBLADE_REGISTRY "registry_1"
 
 // Configurar CLEARBLADE_DEVICE_ID segun tu nombre
-#define CLEARBLADE_DEVICE_ID    "device-101"
+#define CLEARBLADE_DEVICE_ID "device-10x"
 // 101	Leopoldo
 // 102	Gabriel
 // 103	Alejandro
@@ -69,13 +68,13 @@ void app_main(void)
     // Temp sensor simulator config
     tempSensor.initialize();
     tempSensor.set_mqtt_info("", CLEARBLADE_DEVICE_ID, mqtt_client.client_handle);
-    
+
     /* Main loop */
     while (true)
     {
         vTaskDelay(4 * 60 * 1000 / portTICK_PERIOD_MS); // publica cada 4 minutos
         tempSensor.sample_temp();
-        ESP_LOGI(TAG,"Temp: %s", tempSensor.temp_string);
+        ESP_LOGI(TAG, "Temp: %s", tempSensor.temp_string);
         tempSensor.publish_to_mqtt();
     }
 }
