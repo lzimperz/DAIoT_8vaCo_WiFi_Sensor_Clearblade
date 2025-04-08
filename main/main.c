@@ -20,15 +20,18 @@
 // Configurar CLEARBLADE_DEVICE_ID segun tu nombre
 #define CLEARBLADE_DEVICE_ID "device-10x"
 // 101	Leopoldo
-// 102	Gabriel
-// 103	Alejandro
-// 104	Alena
-// 105	Celeste
-// 106	Ignacio
-// 107	Juan
-// 108	Agustin
-// 109	Gonzalo
-// 110	Fabián
+// 102	Pablo Horacio
+// 103	Eberth Gabriel
+// 104	Jose Pedro
+// 105	Juan David
+// 106	Martin Anibal
+// 107	Rodrigo Jurgen
+// 108	Mariángel José
+// 109	Luis Gabriel
+// 110	María Antonella
+// 111	Jesús Enrique
+// 112	Denis Jorge
+// 113	Ernesto Enrique
 
 static const char *TAG = "Main section";
 
